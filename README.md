@@ -35,13 +35,13 @@ docker-compose up --build
 
 ## API Usage
 
-Send a POST request to `/api/strong_password_steps` with a JSON body:
+Send a POST request to `localhost/api/strong_password_steps` with a JSON body:
 
 ```json
 {
 "init_password": "YourPasswordHere"
 }
-
+```
 
 The API will respond with the number of steps required to make the password strong:
 
@@ -49,7 +49,7 @@ The API will respond with the number of steps required to make the password stro
 {
   "num_of_steps": 3
 }
-
+```
 ---------------------------------------------------------------------------------------
 
 ## Password Strength Criteria
