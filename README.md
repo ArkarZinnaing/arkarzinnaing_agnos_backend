@@ -1,4 +1,4 @@
-# Strong Password Recommendation API
+# Strong Password API
 
 This project implements a REST API that calculates the minimum number of steps required to make a given password strong. It's built using Go with the Gin framework, and uses PostgreSQL for logging requests and responses.
 
