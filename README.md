@@ -27,8 +27,6 @@ The service provides an API that takes a password as input and returns the minim
 }
 ```
 
-Certainly. I'll create a README file based on the details provided in the PDF. Here's a draft of the README file:
-markdownCopy# Strong Password Recommendation API
 
 This project implements a backend service that recommends steps to create a strong password.
 
