@@ -66,16 +66,18 @@ A strong password must meet the following criteria:
 To run the unit tests:
 ```sh
 docker-compose exec app go test -v
+```
 
 ---------------------------------------------------------------------------------------
 
 ## To make changes to the application:
 
-Modify the Go code in main.go
-Rebuild and restart the containers:
+- Modify the Go code in `main.go`
+- Rebuild and restart the containers:
 
 ```sh
 docker-compose up --build
+```
 
 
 
