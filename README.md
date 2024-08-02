@@ -1,83 +1,108 @@
 # Strong Password API
 
-This project implements a REST API that calculates the minimum number of steps required to make a given password strong. It's built using Go with the Gin framework, and uses PostgreSQL for logging requests and responses.
+This project implements a backend service that recommends steps to create a strong password.
 
-## Project Structure
+## Project Overview
 
+The service provides an API that takes a password as input and returns the minimum number of actions required to make the password strong based on specific criteria.
 
-This structure provides an overview of the main components of the project:
+### API Specification
 
-- **main.go**: The main application file containing the entry point of the application.
-- **main_test.go**: Unit tests for the application.
-- **Dockerfile**: Configuration file for building the Docker image of the application.
-- **docker-compose.yml**: Configuration for Docker Compose to set up and run multi-container Docker applications.
-- **nginx.conf**: Nginx configuration file.
-- **README.md**: The file you are currently reading, which provides an overview and documentation of the project.
+- **Base URL**: `/api/strong_password_steps`
+- **Method**: POST
+- **Input**: JSON object with `init_password` field
+- **Output**: JSON object with `num_of_steps` field
 
-
-## Requirements
-
-- Docker
-- Docker Compose
-
-## Setup and Running
-
-1. Clone the repository:
-git clone https://github.com/yourusername/strong_password_api.git
-cd strong_password_api
-
-2. Build and run the Docker containers:
-docker-compose up --build
-
-3. The API will be available at `http://localhost/api/strong_password_steps`
-
----------------------------------------------------------------------------------------
-
-## API Usage
-
-Send a POST request to `localhost/api/strong_password_steps` with a JSON body:
-
+#### Example Request:
 ```json
 {
-"init_password": "YourPasswordHere"
+  "init_password": "aA1"
 }
 ```
 
-The API will respond with the number of steps required to make the password strong:
-
+#### Example Response:
 ```json
 {
   "num_of_steps": 3
 }
 ```
----------------------------------------------------------------------------------------
 
-## Password Strength Criteria
+Certainly. I'll create a README file based on the details provided in the PDF. Here's a draft of the README file:
+markdownCopy# Strong Password Recommendation API
 
-A strong password must meet the following criteria:
-- Length between 6 and 20 characters (inclusive)
-- Contains at least 1 lowercase letter, 1 uppercase letter, and 1 digit
-- Does not contain 3 repeating characters in a row
+This project implements a backend service that recommends steps to create a strong password.
 
----------------------------------------------------------------------------------------
+## Project Overview
 
-## Running Tests
+The service provides an API that takes a password as input and returns the minimum number of actions required to make the password strong based on specific criteria.
 
-To run the unit tests:
-```sh
-docker-compose exec app go test -v
+### API Specification
+
+- **Base URL**: `/api/strong_password_steps`
+- **Method**: POST
+- **Input**: JSON object with `init_password` field
+- **Output**: JSON object with `num_of_steps` field
+
+#### Example Request:
+```json
+{
+  "init_password": "aA1"
+}
+```
+### Strong Password Criteria
+
+Password length >=6 and < 20 characters.
+Contains at least 1 lowercase letter, at least 1 uppercase letter, and at least 1 digit.
+Does not contain 3 repeating characters in a row (e.g., "11123" is invalid).
+
+### Tech Stack
+
+Go with Gin framework
+Nginx
+PostgreSQL
+Docker
+
+### Local Deployment
+To deploy the project locally:
+
+1.Ensure you have Docker and Docker Compose installed on your system.
+
+2.Clone the repository
+```json
+git clone https://github.com/your-username/your_name_agnos_backend.git
+cd your_name_agnos_backend
 ```
 
----------------------------------------------------------------------------------------
-
-## To make changes to the application:
-
-- Modify the Go code in `main.go`
-- Rebuild and restart the containers:
-
-```sh
+3.Build and start the services using Docker Compose
+```json
 docker-compose up --build
 ```
 
+4.The API should now be accessible at
+`http://localhost:8080/api/strong_password_steps`
 
 
+### Running Unit Tests
+To run the unit tests:
+
+Ensure you're in the project root directory.
+Run the following command:
+```json
+go test ./...
+```
+This will run all unit tests in the project.
+
+### Additional Features
+
+Request and response logs are stored in the PostgreSQL database.
+The code structure is designed for easy maintenance.
+
+
+### Notes
+
+Passwords should contain only letters, digits, '.' (dot), or '!' (exclamation mark).
+Password length should be between 1 and 40 characters inclusive.
+
+For any issues or questions, please open an issue in the GitHub repository.
+
+`This README provides an overview of the project, explains how to deploy it locally, how to run unit tests, and includes key information about the API and its requirements. You may want to adjust some details based on your specific implementation, such as the exact steps for running tests or any additional setup required for the database.`
