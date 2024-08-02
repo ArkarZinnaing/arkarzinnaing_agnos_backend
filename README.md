@@ -85,7 +85,7 @@ To run the unit tests:
 
 Ensure you're in the project root directory.
 Run the following command:
-```json
+```
 go test ./...
 ```
 This will run all unit tests in the project.
