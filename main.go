@@ -37,7 +37,6 @@ func strongPasswordSteps(c *gin.Context) {
 
 	steps := calculateSteps(request.InitPassword)
 
-	// Log request and response
 	_, err := db.Exec("INSERT INTO logs (request, response) VALUES ($1, $2)", request.InitPassword, steps)
 	if err != nil {
 		log.Printf("Error logging to database: %v", err)
@@ -47,8 +46,6 @@ func strongPasswordSteps(c *gin.Context) {
 }
 
 func calculateSteps(password string) int {
-	// Implementation of password strength calculation
-	// (This is a simplified version, you may want to expand on this)
 	steps := 0
 	if len(password) < 6 {
 		steps += 6 - len(password)
