@@ -66,13 +66,13 @@ To deploy the project locally:
 1.Ensure you have Docker and Docker Compose installed on your system.
 
 2.Clone the repository
-```json
+```
 git clone https://github.com/your-username/your_name_agnos_backend.git
 cd your_name_agnos_backend
 ```
 
 3.Build and start the services using Docker Compose
-```json
+```
 docker-compose up --build
 ```
 
